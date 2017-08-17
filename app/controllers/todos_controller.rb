@@ -30,6 +30,11 @@ def update
 
 end
 
+def index
+  @todos = Todo.all
+
+end
+
 
 
 
