@@ -2,17 +2,21 @@
 <p>
   <%= link_to "Create a todo", new_todo_path%>
 </p>
+
 <table>
 <tr>
+  <th>No</th>
   <th>Name</th>
   <th>Description</th>
 </tr>
   <%@todos.each do |f| %>
   <tr>
+
     <td><%= f.name %></td>
     <td><%= f.description %></td>
-    <td><%= link_to "Edit todo", edit_todo_path(f)%></td>
-    <td><%= link_to "Show todo", todo_path(f)%></td>
+    <td><%= link_to "Edit", edit_todo_path(f)%></td>
+    <td><%= link_to "Show", todo_path(f)%></td>
+    <td><%= link_to "delete", todo_path(f), method: :DELETE, data:{confirm:"Are you sure?"} %></td>
 
   </tr>
 
